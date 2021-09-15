@@ -1,6 +1,7 @@
 import { IonButton } from '@ionic/react'
 import { useState } from 'react'
 import HandSelector from '../HandSelector'
+import './styles.css'
 
 export default () => {
 
@@ -12,15 +13,19 @@ export default () => {
 
   return(
   <>
-  {
-    isPlaying === false ? 
-      <IonButton color="dark" onClick={handleClickStartButton}>Start</IonButton>
-    : 
-      <>
-        <IonButton color="warning" onClick={handleClickStartButton}>Stop</IonButton>
-        <HandSelector />
-      </>
-  }
+    {
+      isPlaying === false ? 
+        <div className="button-container">
+              <IonButton color="dark" onClick={handleClickStartButton}>Start</IonButton>
+        </div>
+      : 
+        <>
+          <div className="button-container">
+            <IonButton color="warning" onClick={handleClickStartButton}>Stop</IonButton>
+          </div>
+            <HandSelector />
+        </>
+    }
   </>
   )
 }
