@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import './styles.css'
 import getRandomImage from '../../helpers/getRandomImage'
 import getHandResult from '../../helpers/getHandResult'
+import saveHandInDB from "../database/saveHandInDB"
 
 const getImageSrc = image =>  `/assets/images/${image}.png`
 const getRandomTime = () => 1000 + Math.random() * 1000 
@@ -32,15 +33,20 @@ export default ({lastUserChoice, setIsPlaying, setLastTenHands}) => {
     
     if(lastUserChoice) {
       setLoadingComputerHand(true)
-  
-      setTimeout(() => {
-        setComputerImage(randomImage)
-        setLoadingComputerHand(false)
-        const handResult = getHandResult({user: lastUserChoice, computer: randomImage})
-        setHandResult(handResult)
-        setIsPlaying(false)
-        setLastTenHands(lastHands => lastHands.concat(handResult))
-      }, getRandomTime())
+      const handResult = getHandResult({user: lastUserChoice, computer: randomImage})
+      
+      //Saving the hand in the database server
+      saveHandInDB({user: lastUserChoice, computer: randomImage, result: handResult})
+      .then(() => {
+        setTimeout(() => {
+          setComputerImage(randomImage)
+          setLoadingComputerHand(false)
+          setHandResult(handResult)
+          setIsPlaying(false)
+          setLastTenHands(lastHands => lastHands.concat(handResult))
+        }, getRandomTime())
+      })
+      .catch(err => console.error(err))
     }
   }, [lastUserChoice])
 

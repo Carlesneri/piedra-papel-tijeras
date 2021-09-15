@@ -1,10 +1,15 @@
-.hand-list {
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: absolute;
-  /* width: 100%; */
   bottom: 0;
+}
+.hand-list {
   display: flex;
   flex-direction: row-reverse;
-  flex-grow: 1;
+  flex-flow: 1;
   flex-wrap: wrap;
   justify-content: flex-start;
 }
@@ -27,3 +32,13 @@
   background-color: #444;
   color: white;
 }
+.hands-modal {
+  padding: 32px;
+}
+.modal-header {
+  padding: 12px;
+}
+/* .code-button {
+  padding: 0;
+  flex-flow: row-reverse;
+} */
