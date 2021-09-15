@@ -4,18 +4,22 @@ import HandSelector from '../HandSelector'
 
 export default () => {
 
-  const [isPlaying, setIsPlaying] = useState(true)
+  const [isPlaying, setIsPlaying] = useState(false)
 
   function handleClickStartButton() {
-    setIsPlaying(true)
+    setIsPlaying(!isPlaying)
   }
 
   return(
   <>
-  {isPlaying === false? 
-    <IonButton color="light" onClick={handleClickStartButton}>Start</IonButton>
+  {
+    isPlaying === false ? 
+      <IonButton color="dark" onClick={handleClickStartButton}>Start</IonButton>
     : 
-    <HandSelector />
+      <>
+        <IonButton color="warning" onClick={handleClickStartButton}>Stop</IonButton>
+        <HandSelector />
+      </>
   }
   </>
   )

@@ -50,7 +50,7 @@ export default ({lastUserChoice, setIsPlaying, setLastTenHands}) => {
         }
       </IonCardContent>
       <IonCardContent className="card-selected">
-        {lastUserChoice && computerImage && 
+        {computerImage && lastUserChoice && 
           <>
             <IonCardHeader className="card-header">Computer</IonCardHeader>
             <img src={getImageSrc(computerImage)} alt={computerImage} />
