@@ -1,0 +1,29 @@
+.card-group {
+  margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 70%;
+}
+.card-selected {
+  padding: 24px;
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.card-header {
+  text-align: center;
+}
+.card-selected img {
+  width: 60px;
+  margin: auto;
+}
+.card-result {
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  transition: opacity 1s ease;
+}
