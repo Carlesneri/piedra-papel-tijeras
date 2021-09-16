@@ -1,0 +1,15 @@
+.button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 8px 0;
+  color: #444;
+}
+.button-container.start-button {
+  margin-top: 64px;
+}
+.button-container h2 {
+  font-weight: bold;
+  margin-top: 64px;
+}

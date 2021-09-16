@@ -1,0 +1,21 @@
+.buttons-container {
+  margin: 12px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.hand-selector-button {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border: 1px solid rgba(179, 107, 0, 0.5);
+  border-radius: 25px;
+  transition: opacity .3s ease;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+.hand-selector-button img {
+  width: 24px;
+}
+.disabled {
+  opacity: .5;
+  pointer-events: none;
+}
