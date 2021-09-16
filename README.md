@@ -2,9 +2,9 @@
 Piedra-papel-tijeras game implementation.
 
 ## Requeriments
-Nodejs
-NPM
-Ionic
+Nodejs  
+NPM  
+Ionic  
 Install dependencies: $npm install
 
 ## Build
